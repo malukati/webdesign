@@ -8,12 +8,20 @@ Qualquer dúvida consulte :::http://www.w3.org/community/webed/wiki/CSS/Properti
 /* 1 - EM - 16px -gambiarra 1EM - 10px
 100% - 16px
 x - 10px       */
+
 body{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	color: #444;
 	font-size: 62.5%; /* gambiarra */
 }
+
+*,*:before,*:after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 
 /*
 Todo 'a' vem por default sublinhado, para mudar isso deve-se usar as seguintes propriedades:
@@ -150,4 +158,119 @@ footer{
 .footer{
 	font-size: 1.0em; /* 10px */
 	margin-bottom: 0;
+}
+
+
+
+/* Medias queries */
+
+
+@media screen and (max-width: 1128px){
+
+.container{
+	padding: 0 2.4em 0 2.4em; /*top right bottom left*/
+}
+
+}
+
+@media screen and (max-width: 768px){
+	.caixa{
+		width: 65%;
+	}
+
+	.coluna{
+		width: 48%;
+		margin-bottom: 2.4em;
+		margin-right: 2%;
+	}
+
+	.coluna:nth-child(even){
+		margin-right: 0;
+	}
+
+	.logo{
+		margin-top: 1.2em;
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 718px){
+
+	.banner{
+		position: relative;
+		float: left;
+		margin: 0;
+		height: 150px;
+	}
+
+	.caixa{
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		background: #000;
+		margin-top: 150px;
+	}
+
+	h1{
+		font-size: 2.5em;
+	}
+
+	section{
+		margin-top: 450px;
+	}
+}
+
+
+@media screen and (max-width: 640px){
+
+	nav{
+		width: 100%;
+	}
+
+	nav ul{
+		float: left;
+		font-size: 0.8em;
+	}
+
+	nav li:first-child{
+		margin-left: 0;
+	}
+
+}
+
+@media screen and (max-width: 520px){
+
+	.coluna{
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.caixa{
+		padding: 1.2em 2em 1.2em 2em;
+		position: relative;
+		display: block;
+		float: left;
+		width: 100%;
+		background: #000;
+		margin-top: 100px;
+	}
+
+	.banner{
+		height: 120px;
+	}
+}
+
+.clearfix:before,
+.clerarfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
 }
